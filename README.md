@@ -7,6 +7,7 @@ JeeSpringCloudV3.0-互联网云快速开发框架
 
 一、平台简介
 -----------------------------------
+帮忙标星、点赞，集1000个星
 演示版地址：http://yocity.imwork.net:10858/admin/login<br>
 在线文档：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis/pages<br>
 文档视频下载：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/attach_files<br>
