@@ -54,9 +54,13 @@ spring:
       #url: http://localhost:8999
   #数据库的配置
   datasource:
-    driverClassName: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
+    #mysql
+    driverClassName: com.mysql.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/jeespring?useUnicode=true&characterEncoding=utf-8
+    #oracle
+    #driverClassName: oracle.jdbc.driver.OracleDriver
+    #jdbc:oracle:thin:@127.0.0.1:1521:orcl
     username: root
     password: root
     # 下面为连接池的补充设置，应用到上面所有数据源中
@@ -112,6 +116,7 @@ spring:
     listFlush: true   #list记录根据添加修改删除自动清除
     expireTime: 900     #缓存有效时间15分钟
     expireTimeShiro: 1800     #缓存有效时间30分钟
+  ######################################### 使用activemq队列是,取消下面注解
   activemq:
     broker-url: tcp://localhost:61616
     in-memory: true # Specify if the default broker URL should be in memory. Ignored if an explicit broker has been specified.
@@ -129,7 +134,7 @@ spring:
 #mybatis的配置
 mybatis:
   config-location: classpath:/mybatis-config.xml
-  mapper-locations: classpath:/mappings/**/*.xml
+  mapper-locations: classpath*:/mappings/**/*.xml
   type-aliases-package: com.jeespring,com.company
 #admin页面管理Path
 adminPath: /admin
