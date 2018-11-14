@@ -53,6 +53,7 @@ import java.io.IOException;
 @ComponentScan
 @EnableAutoConfiguration
 @Configuration
+//部署开发异常处理在线文档：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis
 public class JeeSpringDriver {
 
     @Value("${http.port}")
