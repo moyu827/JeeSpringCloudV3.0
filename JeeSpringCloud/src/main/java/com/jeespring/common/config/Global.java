@@ -178,6 +178,7 @@ public class Global {
         try {
             String url = resolver.getProperty("spring.datasource.url");
             String type = getDbType(url);
+			if(type.equals("sqlserver")){type="mssql";}
             map.put("spring.datasource.url", type);
             return type;
         } catch (Exception e) {
