@@ -55,6 +55,8 @@ import org.springframework.web.bind.annotation.*;
 @Api(value="${functionNameSimple}接口", description="${functionNameSimple}接口")
 public class ${ClassName}RestController extends AbstractBaseController {
 
+	//调用dubbo服务器是，要去Reference注解,注解Autowired
+	//@Reference(version = "1.0.0")
 	@Autowired
 	private I${ClassName}Service ${className}Service;
 

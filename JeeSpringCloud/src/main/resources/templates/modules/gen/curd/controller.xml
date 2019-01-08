@@ -105,10 +105,10 @@ public class ${ClassName}Controller extends AbstractBaseController {
 			countList.add(Double.valueOf(${className}Item.getTotalCount()));
 			<#list table.columnList as c>
 				<#if c.jdbcType?? && (c.jdbcType == "int(11)" || c.jdbcType == "decimal(10,3)") && table.tableType!="2" && c.name?index_of("_id") == -1 && c.name?index_of("_type") == -1>
-			if(${className}Item.getSum${c.javaField?cap_first}()!=null)
+			if(${className}Item.getSum${c.javaField?cap_first}()!=null){
 				sum${c.javaField?cap_first}List.add(Double.valueOf(${className}Item.getSum${c.javaField?cap_first}()));
-			else
-				${className}Item.setSum${c.javaField?cap_first}(0D);
+			}else{
+				${className}Item.setSum${c.javaField?cap_first}(0D);}
 				</#if>
 			</#list>
 		}
@@ -313,6 +313,7 @@ public class ${ClassName}Controller extends AbstractBaseController {
 			for (${ClassName} ${className} : list){
 				${className}Service.save(${className});
 			}
+			successNum=list.size();
 			addMessage(redirectAttributes, "已成功导入 "+successNum+" 条${functionNameSimple}记录");
 		} catch (Exception e) {
 			addMessage(redirectAttributes, "导入${functionNameSimple}失败！失败信息："+e.getMessage());
