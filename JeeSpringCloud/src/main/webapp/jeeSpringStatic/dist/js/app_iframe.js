@@ -2059,12 +2059,12 @@ function refreshTabById(pageId) {
         $iframe[0].contentWindow.location.reload(true);//带参数刷新
     }
 
-    App.blockUI({
+    /*App.blockUI({
         target: '#tab-content',
         boxed: true,
         message: '加载中......'//,
         // animate: true
-    });
+    });*/
 }
 
 var refreshTab = function () {
@@ -2497,10 +2497,6 @@ $(function () {
         var target = $(this).attr("target");
         if (!href) return false;
         if (href.indexOf("javascript") >= 0) return false;
-        if ($("title").html().indexOf("演示版") >= 0 && href.indexOf("swagger-ui.html") >= 0) {
-            $(this).find("span").html("接口文档(演示版不开放)");
-            return false;
-        }
         if(target=="_blank") {
             window.open(href);
             return false;
