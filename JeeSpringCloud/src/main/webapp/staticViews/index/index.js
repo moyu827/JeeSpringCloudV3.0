@@ -1,7 +1,8 @@
 $(document).ready(function(){
-    getCount();
 });
-
+setTimeout(function () {
+    getCount();
+}, 3000);
 $(function () {
     App.setbasePath("../");
     App.setGlobalImgPath("dist/img/");
@@ -9,7 +10,7 @@ $(function () {
         id: '10008',
         title: '<i class="fa fa-home"></i>首页',
         close: false,
-        url: '/admin/home',
+        url: '/admin/home',//
         urlType: "http"
     });
     /*addTabs({
