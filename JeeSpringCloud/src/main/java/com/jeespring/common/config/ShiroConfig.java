@@ -120,6 +120,7 @@ public class ShiroConfig {
         string.append("/staticViews/** = anon\n");
         string.append("/jeeSpringStatic/** = anon\n");
         string.append("/userfiles/** = anon\n");
+        string.append("/QAMachineService/UploadpassedLog/** = anon\n");
         string.append("/rest/** = anon\n");
         string.append(frontPath+"/** = anon\n");
         string.append( adminPath + "/basic = basic\n");

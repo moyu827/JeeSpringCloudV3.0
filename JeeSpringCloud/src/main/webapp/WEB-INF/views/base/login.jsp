@@ -31,19 +31,19 @@
     <video id="vid" width="100%" height="100%" onended="setTimeout(function(){$('#vid').hide(1000)},3000);"
            autoplay="autoplay" muted="muted" autobuffer="autobuffer" preload="auto" oncontextmenu="return false"
            data-hasaudio=""></video>
-    <div id="menu">
-        <a target="_blank" href="https://gitee.com/JeeHuangBingGui/jeeSpringCloud" style="float: left;color: #fff;"
-           class="btn">介绍</a>
-        <a target="_blank" href="https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis/pages"
-           style="float: left;color: #fff;" class="btn">在线文档</a>
-        <a target="_blank" href="https://gitee.com/JeeHuangBingGui/jeeSpringCloud/attach_files"
-           style="float: left;color: #fff;" class="btn">帮助</a>
-    </div>
+    <%--<div id="menu">--%>
+        <%--<a target="_blank" href="https://gitee.com/JeeHuangBingGui/jeeSpringCloud" style="float: left;color: #fff;"--%>
+           <%--class="btn">介绍</a>--%>
+        <%--<a target="_blank" href="https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis/pages"--%>
+           <%--style="float: left;color: #fff;" class="btn">在线文档</a>--%>
+        <%--<a target="_blank" href="https://gitee.com/JeeHuangBingGui/jeeSpringCloud/attach_files"--%>
+           <%--style="float: left;color: #fff;" class="btn">帮助</a>--%>
+    <%--</div>--%>
     <div class="row" id="loginPage" style="padding: 3em;">
         <div class="col-md-4 col-lg-4 col-md-offset-4 col-lg-offset-4">
             <img id="logo" class="img-circle hidden-xs" src="../staticViews/index/images/flat-avatar1.png">
-            <h1>${fns:getConfig('productName')}-${systemMode}-${version}</h1>
-            <sys:message content="${message}"/>
+            <%--<h1>${fns:getConfig('productName')}-${systemMode}-${version}</h1>--%>
+            <%--<sys:message content="${message}"/>--%>
             <!-- 0:隐藏tip, 1隐藏box,不设置显示全部 -->
             <form id="loginForm" role="form" action="${ctx}/login" method="post" novalidate="novalidate">
                 <div class="form-content" style="padding:0px">
@@ -69,9 +69,9 @@
                 <a href="${ctx}/register" class="btn btn-white btn-outline btn-lg btn-rounded progress-login">注册</a>
                 &nbsp;
                 <input type="submit" class="btn btn-white btn-outline btn-lg btn-rounded progress-login" value="登录">
-                <div style="padding-top: 20px;">© 2018 All Rights Reserved. <a
-                        href="https://gitee.com/JeeHuangBingGui/jeeSpringCloud" style="color:white;"> JeeSpring</a>
-                </div>
+                <%--<div style="padding-top: 20px;">© 2018 All Rights Reserved. <a--%>
+                        <%--href="https://gitee.com/JeeHuangBingGui/jeeSpringCloud" style="color:white;"> JeeSpring</a>--%>
+                <%--</div>--%>
             </form>
         </div>
     </div>

@@ -164,8 +164,8 @@ public class SysConfigService extends AbstractBaseService<SysConfigDao, SysConfi
 	}
 	public  String systemMode(){
 		if(this.isDemoMode()) {
-            return "演示版";
+            return "";
         }
-		return "正式版";
+		return "";
 	}
 }

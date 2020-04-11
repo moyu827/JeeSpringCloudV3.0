@@ -2,7 +2,7 @@ JeeSpringVersion: 3.2.2
 demoMode: false
 demoModeDescription: 演示版启用，为系统能正常演示，暂时不允许操作！系统配置可开启正式版！功能全开源！每周周一再更新！
 server:
-  port: 9999
+  port: 8080
   tomcat:
     uri-encoding: UTF-8
     basedir: /data/jeespring/tomcat
@@ -16,11 +16,11 @@ server:
       suffix: .log
       request-attributes-enabled: true
       rename-on-rotate: true
-  ssl:
-    key-store: classpath:keystore.p12
-    key-store-password: jeespring
-    keyStoreType: PKCS12
-    keyAlias: tomcat
+#  ssl:
+#    key-store: classpath:keystore.p12
+#    key-store-password: jeespring
+#    keyStoreType: PKCS12
+#    keyAlias: tomcat
   #启动热部署
   jsp-servlet.init-parameters.development: true
 http:
@@ -60,7 +60,7 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
     #mysql
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/jeespring?useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://127.0.0.1:3306/employ_db?useUnicode=true&characterEncoding=utf-8&useSSL=false
     #oracle
     #driverClassName: oracle.jdbc.driver.OracleDriver
     #jdbc:oracle:thin:@127.0.0.1:1521:orcl
@@ -68,7 +68,7 @@ spring:
     #driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
     #url: jdbc:sqlserver://localhost:1433;DatabaseName=jeespring
     username: root
-    password: root
+    password: password
     # 下面为连接池的补充设置，应用到上面所有数据源中
     # 初始化大小，最小，最大
     initialSize: 5
@@ -112,7 +112,7 @@ spring:
   redis:
     hostName: 127.0.0.1
     port: 6379
-    password: 123456
+    password:
     pool:
       maxActive: 8
       maxWait: -1
@@ -125,20 +125,20 @@ spring:
     expireTime: 900     #缓存有效时间15分钟
     expireTimeShiro: 1800     #缓存有效时间30分钟
   ######################################### 使用activemq队列是,取消下面注解
-  activemq:
-    broker-url: tcp://localhost:61616
-    in-memory: true # Specify if the default broker URL should be in memory. Ignored if an explicit broker has been specified.
-    password: admin  # Login password of the broker.
-    user: admin  # Login user of the broker.
-    packages:
-      trust-all: true # Trust all packages.
-      trusted:  # Comma-separated list of specific packages to trust (when not trusting all packages).
-    pool:
-      configuration.*:  # See PooledConnectionFactory.
-      enabled: true # Whether a PooledConnectionFactory should be created instead of a regular ConnectionFactory.
-      expiry-timeout: 0 # Connection expiration timeout in milliseconds.
-      idle-timeout: 30000 # Connection idle timeout in milliseconds.
-      max-connections: 1 # Maximum number of pooled connections.
+#  activemq:
+#    broker-url: tcp://localhost:61616
+#    in-memory: true # Specify if the default broker URL should be in memory. Ignored if an explicit broker has been specified.
+#    password: admin  # Login password of the broker.
+#    user: admin  # Login user of the broker.
+#    packages:
+#      trust-all: true # Trust all packages.
+#      trusted:  # Comma-separated list of specific packages to trust (when not trusting all packages).
+#    pool:
+#      configuration.*:  # See PooledConnectionFactory.
+#      enabled: true # Whether a PooledConnectionFactory should be created instead of a regular ConnectionFactory.
+#      expiry-timeout: 0 # Connection expiration timeout in milliseconds.
+#      idle-timeout: 30000 # Connection idle timeout in milliseconds.
+#      max-connections: 1 # Maximum number of pooled connections.
 #mybatis的配置
 mybatis:
   config-location: classpath:/mybatis-config.xml
